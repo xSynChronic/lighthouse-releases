@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lighthouse Download</title>
+<meta name="description" content="Download Lighthouse for your Mac or Windows PC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&display=swap">
+<!--
+  The download page. Source for scripts/build-site.mjs, which fills the
+  {{…}} values from electron/releases.json and writes dist/site/index.html.
+  It sends nothing anywhere: the only script picks Mac or Windows.
+-->
+<style>
+:root {
+  color-scheme: dark;
+  --ground: #060b10; --surface: #0c1419; --surface-2: #131e25;
+  --rule: #172730; --rule-2: #243b46; --rule-3: #33545f;
+  --ink: #eef4f4; --ink-2: #a8bfc6; --ink-3: #7e98a1; --ink-4: #62808b;
+  --lamp: #f5c56a; --lamp-ink: #f8d18c; --lamp-deep: #b8862e;
+  --lamp-soft: rgba(245,197,106,.08); --lamp-glow: rgba(245,197,106,.22);
+  --red: #f0604e;
+  /* Pictures of the operating system's own prompts keep its colors. */
+  --mac-alert: #ececec; --mac-ink: #1d1d1f; --mac-sub: #4a4a4f; --mac-btn: #ffffff; --mac-blue: #0a64d8;
+  --ss-blue: #0b5ea8; --ss-ink: #ffffff; --ss-sub: #d6e6f5; --ss-btn: #1a73c2;
+  --display: "Newsreader", Georgia, serif;
+  --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --ground: #e3e7e4; --surface: #f6f8f5; --surface-2: #ffffff;
+    --rule: #d5dad5; --rule-2: #b2bdb6; --rule-3: #919e97;
+    --ink: #08131a; --ink-2: #3b5057; --ink-3: #4a5f66; --ink-4: #5d7278;
+    --lamp: #dfa32b; --lamp-ink: #7c5605; --lamp-deep: #b8821a;
+    --lamp-soft: rgba(184,130,26,.07); --lamp-glow: rgba(184,130,26,.18);
+    --red: #bb3628;
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ground: #e3e7e4; --surface: #f6f8f5; --surface-2: #ffffff;
+  --rule: #d5dad5; --rule-2: #b2bdb6; --rule-3: #919e97;
+  --ink: #08131a; --ink-2: #3b5057; --ink-3: #4a5f66; --ink-4: #5d7278;
+  --lamp: #dfa32b; --lamp-ink: #7c5605; --lamp-deep: #b8821a;
+  --lamp-soft: rgba(184,130,26,.07); --lamp-glow: rgba(184,130,26,.18);
+  --red: #bb3628;
+}
+:root[data-theme="dark"] { color-scheme: dark; }
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100%;
+  background: radial-gradient(ellipse at 88% 0%, var(--lamp-soft), transparent 55%), var(--ground);
+  color: var(--ink); font: 400 16px/1.6 var(--sans);
+  padding-inline: 20px; padding-block: 48px 64px;
+}
+.page { max-width: 1040px; margin: 0 auto; display: grid; gap: 56px; }
+header.mark { display: flex; align-items: center; gap: 12px; font: 400 20px var(--display); color: var(--ink); }
+header.mark svg { width: 30px; height: 30px; }
+.main { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 48px; align-items: start; }
+.kick { font: 500 11px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--lamp-ink); margin: 0 0 18px; }
+h1 { font: 300 clamp(40px, 6vw, 58px)/1.02 var(--display); letter-spacing: -.01em; margin: 0 0 18px; text-wrap: balance; }
+.sub { font-size: 17.5px; color: var(--ink-2); max-width: 40ch; margin: 0; }
+.cta { display: grid; gap: 12px; justify-items: start; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 26px; border-radius: 999px; background: var(--ink); color: var(--ground); font: 600 16px var(--sans); text-decoration: none; }
+.btn:hover { background: color-mix(in srgb, var(--ink) 88%, var(--lamp)); }
+.btn svg { width: 18px; height: 18px; }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 2px solid var(--lamp); outline-offset: 3px; }
+.small { font-size: 13.5px; color: var(--ink-4); }
+.small a, .swap { color: var(--ink-3); text-decoration: underline; text-decoration-color: var(--rule-3); text-underline-offset: 4px; background: none; border: 0; font: inherit; padding: 0; cursor: pointer; }
+.trust { margin-top: 40px; display: grid; gap: 8px; max-width: 44ch; }
+.trust p { margin: 0; font-size: 14px; color: var(--ink-3); display: grid; grid-template-columns: 14px 1fr; gap: 10px; }
+.trust p::before { content: ""; width: 6px; height: 6px; margin-top: 9px; border-radius: 50%; background: var(--lamp); box-shadow: 0 0 8px var(--lamp); }
+
+.next { border: 1px solid var(--rule-2); border-radius: 12px; background: var(--surface); padding: 22px 22px 24px; display: grid; gap: 16px; }
+.next > .kick { color: var(--ink-4); margin: 0; }
+.step { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; font-size: 15px; color: var(--ink-2); }
+.step b { font: 500 12px var(--mono); color: var(--lamp-ink); padding-top: 3px; }
+.step strong { color: var(--ink); font-weight: 600; }
+.shot-wrap { margin-left: 34px; }
+.ring { box-shadow: 0 0 0 2.5px var(--lamp), 0 0 16px var(--lamp-glow); }
+
+/* A Mac alert, drawn from the real one. */
+.mac { background: var(--mac-alert); color: var(--mac-ink); border-radius: 12px; padding: 18px 18px 14px; display: grid; gap: 10px; justify-items: center; text-align: center; font: 400 12.5px/1.4 -apple-system, "Helvetica Neue", var(--sans); box-shadow: 0 16px 40px -18px rgba(0,0,0,.6); max-width: 300px; }
+.mac svg { width: 44px; height: 44px; }
+.mac .t { font-weight: 700; font-size: 13px; }
+.mac .d { color: var(--mac-sub); font-size: 11.5px; }
+.mac .btns { display: grid; gap: 6px; width: 100%; margin-top: 4px; }
+.mac .btns span { display: block; padding: 5px 0; border-radius: 6px; background: var(--mac-btn); font-weight: 500; font-size: 12.5px; }
+.mac .btns .blue { background: var(--mac-blue); color: #fff; }
+
+/* Windows SmartScreen, drawn from the real one. */
+.ss { background: var(--ss-blue); color: var(--ss-ink); padding: 18px 18px 14px; display: grid; gap: 10px; font: 400 12.5px/1.45 "Segoe UI", var(--sans); box-shadow: 0 16px 40px -18px rgba(0,0,0,.6); max-width: 340px; }
+.ss .t { font: 300 20px/1.2 "Segoe UI Light", "Segoe UI", var(--sans); }
+.ss .d { color: var(--ss-sub); font-size: 12px; }
+.ss .more { justify-self: start; text-decoration: underline; padding: 1px 4px; margin-left: -4px; border-radius: 3px; }
+.ss .meta { color: var(--ss-sub); font-size: 12px; display: grid; gap: 2px; }
+.ss .btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 6px; }
+.ss .btns span { padding: 5px 16px; background: var(--ss-btn); border: 1px solid rgba(255,255,255,.35); font-size: 12px; }
+
+details { border-top: 1px solid var(--rule); padding-top: 14px; }
+summary { cursor: pointer; font-size: 14.5px; color: var(--ink); font-weight: 500; }
+details p, details ol { font-size: 14px; color: var(--ink-2); margin: 10px 0 0; }
+details ol { padding-left: 20px; display: grid; gap: 4px; }
+details strong { color: var(--ink); font-weight: 600; }
+
+footer { border-top: 1px solid var(--rule); padding-top: 16px; font-size: 13px; color: var(--ink-4); max-width: 80ch; }
+
+/* Only one computer's path shows. Without the script, the "other" block
+   with both downloads is what shows. */
+html:not([data-os]) [data-for]:not([data-for~="other"]),
+html[data-os="mac"] [data-for]:not([data-for~="mac"]),
+html[data-os="windows"] [data-for]:not([data-for~="windows"]),
+html[data-os="other"] [data-for]:not([data-for~="other"]) { display: none; }
+
+@media (max-width: 760px) {
+  body { padding-block: 32px 48px; }
+  .main { grid-template-columns: 1fr; gap: 36px; }
+  .shot-wrap { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+<script>
+(function () {
+  var p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "") + " " + navigator.userAgent;
+  var os = /iphone|ipad|ipod|android/i.test(p) ? "other" : /mac/i.test(p) ? "mac" : /win/i.test(p) ? "windows" : "other";
+  document.documentElement.setAttribute("data-os", os);
+})();
+</script>
+</head>
+<body>
+
+<div class="page">
+  <header class="mark">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><polygon points="10,29 22,29 19,12 13,12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><polygon points="10.9,25 21.1,25 20.5,21 11.5,21" fill="var(--red)"/><path d="M10.8,11 h10.4" stroke="currentColor" stroke-width="1.4"/><rect x="13.4" y="6.6" width="5.2" height="4.4" fill="var(--lamp)" style="filter:drop-shadow(0 0 5px var(--lamp))"/><path d="M12.8,7 Q16,2.6 19.2,7 Z" fill="currentColor"/></svg>
+    Lighthouse
+  </header>
+
+  <main class="main">
+    <div>
+      <p class="kick" data-for="mac">For your Mac</p>
+      <p class="kick" data-for="windows">For your Windows PC</p>
+      <p class="kick" data-for="other">For your computer</p>
+      <h1>Lighthouse for your practice.</h1>
+      <p class="sub">Your deals, signings and money in one place, kept on your own computer.</p>
+
+      <div class="cta" data-for="mac">
+        <a class="btn" href="https://github.com/xSynChronic/lighthouse-releases/releases/latest/download/Lighthouse-mac.dmg"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0-4-4m4 4 4-4M4 16h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for Mac</a>
+        <span class="small">macOS 12 or newer · Apple silicon or Intel · <button class="swap" type="button" data-show="windows">Windows instead</button></span>
+      </div>
+      <div class="cta" data-for="windows">
+        <a class="btn" href="https://github.com/xSynChronic/lighthouse-releases/releases/latest/download/Lighthouse-Setup.exe"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10m0 0-4-4m4 4 4-4M4 16h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for Windows</a>
+        <span class="small">Windows 10 or 11 · <button class="swap" type="button" data-show="mac">Mac instead</button></span>
+      </div>
+      <div class="cta" data-for="other">
+        <p class="sub">Lighthouse runs on a Mac or a Windows PC. Open this page on the computer you’ll use it on, or choose one here.</p>
+        <span class="small"><a href="https://github.com/xSynChronic/lighthouse-releases/releases/latest/download/Lighthouse-mac.dmg">Download for Mac</a> · <a href="https://github.com/xSynChronic/lighthouse-releases/releases/latest/download/Lighthouse-Setup.exe">Download for Windows</a></span>
+      </div>
+
+      <div class="trust">
+        <p>Everything you enter stays on this computer. Nothing of yours is sent anywhere.</p>
+        <p>Updates arrive on their own. Your records are kept apart from the app, so an update never touches them.</p>
+      </div>
+    </div>
+
+    <!-- Mac, signed and notarized: one ordinary confirmation. -->
+    <section class="next" data-for="mac" data-signed="true" aria-label="What you’ll see next">
+      <p class="kick">What you’ll see next</p>
+      <div class="step"><b>1</b><span>Open the download and drag <strong>Lighthouse</strong> into <strong>Applications</strong>.</span></div>
+      <div class="step"><b>2</b><span>Open Lighthouse from Applications. Your Mac asks whether to open an app from the internet. Choose <strong>Open</strong>.</span></div>
+      <div class="shot-wrap"><div class="mac" role="img" aria-label="Your Mac’s question, with Open circled">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0c1419"/><polygon points="10,29 22,29 19,12 13,12" fill="#0c1419" stroke="#eef4f4" stroke-width="1.5" stroke-linejoin="round"/><polygon points="10.9,25 21.1,25 20.5,21 11.5,21" fill="#f0604e"/><path d="M10.8,11 h10.4" stroke="#eef4f4" stroke-width="1.5"/><rect x="13.4" y="6.6" width="5.2" height="4.4" fill="#f5c56a"/><path d="M12.8,7 Q16,2.6 19.2,7 Z" fill="#eef4f4"/></svg>
+        <span class="t">“Lighthouse” is an app downloaded from the internet. Are you sure you want to open it?</span>
+        <span class="btns"><span class="blue ring">Open</span><span>Cancel</span></span>
+      </div></div>
+      <div class="step"><b>3</b><span>Lighthouse opens and takes it from there. Your Mac won’t ask again.</span></div>
+    </section>
+
+    <!-- Mac before the Developer ID exists: the way through Privacy & Security. -->
+    <section class="next" data-for="mac" data-signed="false" aria-label="What you’ll see next">
+      <p class="kick">What you’ll see next</p>
+      <div class="step"><b>1</b><span>Open the download and drag <strong>Lighthouse</strong> into <strong>Applications</strong>, then open it from there.</span></div>
+      <div class="step"><b>2</b><span>Your Mac says it can’t check Lighthouse. Choose <strong>Done</strong>.</span></div>
+      <div class="shot-wrap"><div class="mac" role="img" aria-label="Your Mac’s message, with Done circled">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0c1419"/><polygon points="10,29 22,29 19,12 13,12" fill="#0c1419" stroke="#eef4f4" stroke-width="1.5" stroke-linejoin="round"/><polygon points="10.9,25 21.1,25 20.5,21 11.5,21" fill="#f0604e"/><path d="M10.8,11 h10.4" stroke="#eef4f4" stroke-width="1.5"/><rect x="13.4" y="6.6" width="5.2" height="4.4" fill="#f5c56a"/><path d="M12.8,7 Q16,2.6 19.2,7 Z" fill="#eef4f4"/></svg>
+        <span class="t">“Lighthouse” Not Opened</span>
+        <span class="d">Apple could not verify “Lighthouse” is free of malware that may harm your Mac or compromise your privacy.</span>
+        <span class="btns"><span class="blue ring">Done</span><span>Move to Trash</span></span>
+      </div></div>
+      <div class="step"><b>3</b><span>Open <strong>System Settings</strong>, then <strong>Privacy &amp; Security</strong>. Near the bottom, beside “Lighthouse” was blocked, choose <strong>Open Anyway</strong> and enter your Mac’s password.</span></div>
+      <div class="step"><b>4</b><span>Choose <strong>Open Anyway</strong> once more. Lighthouse opens, and your Mac won’t ask again.</span></div>
+    </section>
+
+    <section class="next" data-for="windows" aria-label="What you’ll see next">
+      <p class="kick">What you’ll see next</p>
+      <div class="step"><b>1</b><span>Open the download, <strong>Lighthouse-Setup.exe</strong>.</span></div>
+      <div class="step"><b>2</b><span>Windows shows a blue box. Choose <strong>More info</strong>.</span></div>
+      <div class="shot-wrap"><div class="ss" role="img" aria-label="Windows protected your PC, with More info circled">
+        <span class="t">Windows protected your PC</span>
+        <span class="d">Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</span>
+        <span class="more ring">More info</span>
+        <span class="btns"><span>Don’t run</span></span>
+      </div></div>
+      <div class="step"><b>3</b><span>Choose <strong>Run anyway</strong>.</span></div>
+      <div class="shot-wrap"><div class="ss" role="img" aria-label="The same box after More info, with Run anyway circled">
+        <span class="t">Windows protected your PC</span>
+        <span class="meta"><span>App: Lighthouse-Setup.exe</span><span>Publisher: Unknown publisher</span></span>
+        <span class="btns"><span class="ring">Run anyway</span><span>Don’t run</span></span>
+      </div></div>
+      <div class="step"><b>4</b><span>Lighthouse installs itself and opens. Windows asks this once, for any app from a maker it doesn’t know yet.</span></div>
+      <details>
+        <summary>If Windows says it blocked Lighthouse instead</summary>
+        <p>Some PCs have <strong>Smart App Control</strong> turned on, a separate Windows check. When it blocks an app, there is no Run anyway. To install Lighthouse:</p>
+        <ol>
+          <li>Open <strong>Start</strong> and search for <strong>Windows Security</strong>.</li>
+          <li>Choose <strong>App &amp; browser control</strong>, then <strong>Smart App Control settings</strong>.</li>
+          <li>Choose <strong>Off</strong>, then open the download again.</li>
+        </ol>
+        <p>On PCs with the March 2026 Windows update, you can turn Smart App Control back on later from the same place. On older ones it stays off for good unless Windows is reset, so check with whoever sent you this link first.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>The only thing Lighthouse fetches from the internet is news of an update.</footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var macSigned = "false" === "true";
+  // Show only the Mac steps that match how this build was signed.
+  document.querySelectorAll("[data-signed]").forEach(function (el) {
+    if ((el.getAttribute("data-signed") === "true") !== macSigned) el.remove();
+  });
+  document.querySelectorAll("[data-show]").forEach(function (b) {
+    b.addEventListener("click", function () { root.setAttribute("data-os", b.getAttribute("data-show")); });
+  });
+})();
+</script>
+</body>
+</html>
