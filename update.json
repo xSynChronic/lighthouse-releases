@@ -1,0 +1,10 @@
+{
+  "commit": "967657d",
+  "builtAt": "2026-10-14T07:57:42.062Z",
+  "shellKey": "electron-44.4.4-efe8f033bfb7",
+  "schema": 60,
+  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-967657d/lighthouse-update-967657d.tar.gz",
+  "size": 18839479,
+  "sha256": "de9917627b2d59cb0a1b371d3b4b0aaa9164f2a79bb3a38c10c588e0c01c5050",
+  "signature": "Lp0lGZKjXwDEp7+kl9iz9wKqUTfrCOGD3pKL1f2Jc+p5hjfInoRg7uVrK/sZqvMfCo0FBILzhFHhFrPZOhU1Bw=="
+}
