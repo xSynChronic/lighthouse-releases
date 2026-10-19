@@ -1,10 +1,10 @@
 {
-  "commit": "01bfe3f",
-  "builtAt": "2026-10-19T00:38:53.236Z",
+  "commit": "e2fc890",
+  "builtAt": "2026-10-19T18:44:03.969Z",
   "shellKey": "electron-44.4.4-f7c11a2fc8d5",
   "schema": 66,
-  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-01bfe3f/lighthouse-update-01bfe3f.tar.gz",
-  "size": 19458904,
-  "sha256": "45fbebf8a8a08ce953222eec6268ccd32053e2fb74c3872904111026d73b1e52",
-  "signature": "ByBVUBiIKN1AYdrRQG6ZW8m4D+bwaytTeLzZnt199pwJyYEBiYJB4AagF6Rvx7a6XOkdhXNQi6UIMZg2LzCzCw=="
+  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-e2fc890/lighthouse-update-e2fc890.tar.gz",
+  "size": 19779526,
+  "sha256": "c1c65c28e18907be8387b3bb7e93a8cc2e6c91df399acaf7fb215b1259e1f658",
+  "signature": "kpDp4YQ/Z6WbHLhqXlPirCEG+LjPFrqTUrnjwsyJjDijiiZBN5nMkIRDs2w8uVrZPWoomdQgQ1KxL1eNs+t1Bg=="
 }
