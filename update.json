@@ -1,10 +1,10 @@
 {
-  "commit": "154e7b2",
-  "builtAt": "2026-11-05T04:31:00.847Z",
-  "shellKey": "electron-44.10.0-f7c11a2fc8d5",
+  "commit": "b9b48ff",
+  "builtAt": "2026-11-06T18:09:13.651Z",
+  "shellKey": "electron-44.10.0-90def058788c",
   "schema": 68,
-  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-154e7b2/lighthouse-update-154e7b2.tar.gz",
-  "size": 20333031,
-  "sha256": "fbd4821dd0d6f23207c92d2b63464861c44a75602f6203856d6d3d93dcba5af4",
-  "signature": "7govrukXvb1NGX3qtZj8Uci6jd0aVnHkymtx9yX5qa8aql/mPzADbsaoY8PNOIrEJPoU6ERlm/pmJ4FARdpsAg=="
+  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-b9b48ff/lighthouse-update-b9b48ff.tar.gz",
+  "size": 19579926,
+  "sha256": "dae5dd4c552b98a63b2fbd192bb35df66329b602b2ed250c314e56411532e01a",
+  "signature": "P1gU9fCs+u/F+2iVSUMkrQLTnX1wnochO2zh/mRmSNisIe96phYFpRDuP6t3luOoPm/JHxnW8C1OvQC0pUY1DA=="
 }
