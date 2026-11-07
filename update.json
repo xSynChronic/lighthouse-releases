@@ -1,10 +1,18 @@
 {
-  "commit": "b9b48ff",
-  "builtAt": "2026-11-06T18:09:13.651Z",
-  "shellKey": "electron-44.10.0-90def058788c",
+  "commit": "10fd2c5",
+  "builtAt": "2026-11-07T00:45:53.304Z",
+  "shellKey": "electron-44.10.0-618924aec35b",
   "schema": 68,
-  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-b9b48ff/lighthouse-update-b9b48ff.tar.gz",
-  "size": 19579926,
-  "sha256": "dae5dd4c552b98a63b2fbd192bb35df66329b602b2ed250c314e56411532e01a",
-  "signature": "P1gU9fCs+u/F+2iVSUMkrQLTnX1wnochO2zh/mRmSNisIe96phYFpRDuP6t3luOoPm/JHxnW8C1OvQC0pUY1DA=="
+  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-10fd2c5/lighthouse-update-10fd2c5.tar.gz",
+  "size": 19553696,
+  "sha256": "867ac3ef670d5703ecc041a241ab94c8280e11e725d50bb3d4b94908e0a1ea74",
+  "signature": "XKj5txXNFwc+RKYE+Ge1sieBMj3ef+9RPNjUV5U6o940clrDfxtMGiEO2bGqFQNqFOmeD9muCYBmIaItyWTHAw==",
+  "installer": {
+    "version": "1.2.0",
+    "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/v1.2.0/Lighthouse-Setup.exe",
+    "size": 122492934,
+    "sha256": "b30ca2ef864a87d0a611f8dcde279b602e0a187b884e46fa7cd3efef800b0bb1",
+    "shellKey": "electron-44.10.0-618924aec35b",
+    "signature": "VHOXUoZSlIn9g6+i6neViBbq1URrfDhBynvIdQ5gzTVXrBWvxcPOQ51SZ93W87kNqtEcy3H4rmpeBAFMQmWnAg=="
+  }
 }
