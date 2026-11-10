@@ -1,12 +1,12 @@
 {
-  "commit": "10fd2c5",
-  "builtAt": "2026-11-07T00:45:53.304Z",
+  "commit": "e139377",
+  "builtAt": "2026-11-10T20:16:33.298Z",
   "shellKey": "electron-44.10.0-618924aec35b",
   "schema": 68,
-  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-10fd2c5/lighthouse-update-10fd2c5.tar.gz",
-  "size": 19553696,
-  "sha256": "867ac3ef670d5703ecc041a241ab94c8280e11e725d50bb3d4b94908e0a1ea74",
-  "signature": "XKj5txXNFwc+RKYE+Ge1sieBMj3ef+9RPNjUV5U6o940clrDfxtMGiEO2bGqFQNqFOmeD9muCYBmIaItyWTHAw==",
+  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-e139377/lighthouse-update-e139377.tar.gz",
+  "size": 20697268,
+  "sha256": "20820003686e608b39c6400f76e73d3e7089669e711e88e20efe512e322e51d7",
+  "signature": "mBSdJAKC8JAgVS1w0jVcW6SHon8itvEUA5Bc+MrUjuABcJAsYarsys5BosZxrYKie8mvxu9up2j1MCAD9ldnBA==",
   "installer": {
     "version": "1.2.0",
     "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/v1.2.0/Lighthouse-Setup.exe",
