@@ -1,18 +1,18 @@
 {
-  "commit": "23f80a0",
-  "builtAt": "2026-11-21T03:15:00.369Z",
-  "shellKey": "electron-44.10.0-525a3c8c3ab0",
-  "schema": 69,
-  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-23f80a0/lighthouse-update-23f80a0.tar.gz",
-  "size": 19817380,
-  "sha256": "9ba85d95d9d7b789ea91720b72dadf3b4f4445d0fad4870c22fb57992a819a81",
-  "signature": "rYbXQ0IXtAApeL5WGtft7f2WNWrpjN5E36f8Z7OMJm/uH8DhHMy5IoYrWV/aZBKMvradfFghGnuc2S28ek0hDQ==",
+  "commit": "a85d783",
+  "builtAt": "2026-11-25T01:50:49.106Z",
+  "shellKey": "electron-44.10.0-09a484ffe71d",
+  "schema": 71,
+  "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/update-a85d783/lighthouse-update-a85d783.tar.gz",
+  "size": 22878925,
+  "sha256": "57f61e9da11f72dcdb6fc90e9adbfd49952049af9274fd69682fdeb140ce41c6",
+  "signature": "B2dYXJ7pY2Tf9ixJcULSR5vb4QsCRDtmvjtu8SoMBQ3rx0P9qROIJju7m5ridvBc2R8+YscSiVD4n9s5JS9NDA==",
   "installer": {
-    "version": "1.3.0",
-    "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/v1.3.0/Lighthouse-Setup.exe",
-    "size": 122301582,
-    "sha256": "b96dc3850698dd4795b4d65ad5ccb2a8a09dc9832c92fcb3fd0cc9fe9cc60390",
-    "shellKey": "electron-44.10.0-525a3c8c3ab0",
-    "signature": "EFEnHiYbERF8fjcoaWMrFzuPL0rNIbpdJk7pcqmk6CkdDy6gNjCTiCnTNwMhstVvDzXnWyg4GHqDrq7NUDwQBg=="
+    "version": "1.4.0",
+    "url": "https://github.com/xSynChronic/lighthouse-releases/releases/download/v1.4.0/Lighthouse-Setup.exe",
+    "size": 124007621,
+    "sha256": "d0b49ec30e9605006cc6d1b5a607b7ed330421e386cddc2091910eefff040934",
+    "shellKey": "electron-44.10.0-09a484ffe71d",
+    "signature": "r2wIdBSyu3tK2ImSyIUsjsTwd+x+HRS+f2flMKCTkZ/tUiykkEx5Yauf0r+OMier1KTeL9pWFKTdApkk3pKkBw=="
   }
 }
